@@ -1,0 +1,87 @@
+<app-header></app-header>
+		<div class="wrapper">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="assets/images/5191079.jpg" alt="">
+				  </div>
+         <form [formGroup]='signupForm'>
+				 	<h3>Inscription</h3>
+					<div class="form-holder active">
+						<input type="text" class="form-control"formControlName="nom" placeholder="Nom">
+            <div *ngIf='signupForm.controls["nom"].invalid && ( signupForm.controls["nom"].dirty || signupForm.controls["nom"].touched )' >
+              <div *ngIf='signupForm.controls["nom"].errors.required'>
+                First Name is required
+              </div>
+              <div *ngIf='signupForm.controls["nom"].errors.minlength'>
+                First Name must have at least 4 character
+              </div>
+				    	</div>
+             </div>
+             <div class="form-holder active">
+					  	<input type="text" class="form-control" formControlName="prenom" placeholder="prenom">
+              <div *ngIf='signupForm.controls["prenom"].invalid && ( signupForm.controls["prenom"].dirty || signupForm.controls["prenom"].touched )'>
+              <div *ngIf='signupForm.controls["prenom"].errors.required'>
+                Last Name is required
+              </div>
+              <div *ngIf='signupForm.controls["prenom"].errors.minlength'>
+                Last Name must have at least 5 character
+              </div>
+              </div>
+				   	</div>
+             <div class="form-holder active">
+					  	<input type="text" class="form-control" formControlName="telephone" placeholder="Télephone">
+              <div *ngIf='signupForm.controls["telephone"].invalid && ( signupForm.controls["telephone"].dirty || signupForm.controls["telephone"].touched )'>
+              <div *ngIf='signupForm.controls["telephone"].errors.required'>
+                Last Name is required
+              </div>
+              <div *ngIf='signupForm.controls["telephone"].errors.minlength'>
+                Last Name must have at least 8 character
+              </div>
+              </div>
+				   	</div>
+
+
+
+
+
+
+
+
+					<div class="form-holder active">
+						<input type="text" class="form-control" formControlName="email" placeholder="Email">
+            <div *ngIf='signupForm.controls["email"].invalid && ( signupForm.controls["email"].dirty || signupForm.controls["email"].touched )'>
+              <div *ngIf='signupForm.controls["email"].errors.required'>
+                Email is required
+              </div>
+              <div *ngIf='signupForm.controls["email"].errors.email'>
+                Email must have be correct
+              </div>
+            </div>
+					</div>
+          <div class="form-holder active">
+						<input type="password" class="form-control" formControlName="pwd" placeholder="Mot de passe">
+            <div *ngIf='signupForm.controls["pwd"].invalid && ( signupForm.controls["pwd"].dirty || signupForm.controls["pwd"].touched )'>
+              <div *ngIf='signupForm.controls["pwd"].errors.required'>
+                Email is required
+              </div>
+              <div *ngIf='signupForm.controls["pwd"].errors.minlength'>
+                pwd have be correct
+              </div>
+            </div>
+					</div>
+          <div class="form-holder active">
+						<input type="password" class="form-control" formControlName="Confirmpwd" placeholder="Confirmer mot de passe">
+					</div>
+          <div class="checkbox">
+            <input type="checkbox" checked> 
+           </div>
+						<div class="form-login">
+            <button (click)="signup()">
+						S'inscrire
+				   	</button>
+			  	</div>
+      </form>
+    </div>
+  </div>
+		
+	

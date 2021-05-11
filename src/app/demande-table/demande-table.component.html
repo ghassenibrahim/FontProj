@@ -1,0 +1,42 @@
+
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    
+                    
+                </div>
+            </div>
+  
+            <table class="table table-bordered">
+               <table class="table">
+         <thead>
+          <tr>
+             <th scope="col">#</th>
+          <th scope="col">Libelle</th>
+          <th scope="col">Sujet</th>
+          <th scope="col">Date demande</th>
+          <th scope="col">Description</th>
+          <th scope="col">Type projet</th>
+          <th scope="col">Actions</th>
+    
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let d of demandes'>
+          <th >{{d.id}}</th>
+          <td>{{d.libelle}}</td>
+          <td>{{d.sujet}}</td>
+          <td>{{d.date}}</td>
+          <td>{{d.description}}</td>
+          <td>{{d.type}}</td>
+          <td>
+            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+            <a class="edit" title="Edit" data-toggle="tooltip" (click)='goToEdit(d.id)'><i class="material-icons">&#xE254;</i></a>
+            <a class="delete" title="Delete" data-toggle="tooltip"(click)='deleteDemande(d.id)'><i class="material-icons">&#xE872;</i></a>
+
+         </td>
+        </tr>
+      </tbody>
+    </table>
+   

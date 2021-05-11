@@ -1,0 +1,49 @@
+
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                 
+                </div>
+            </div>
+  
+            <table class="table table-bordered">
+        <table class="table">
+          <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Dimensions</th>
+            <th scope="col">Couleurs</th>
+            <th scope="col">Support</th>
+            <th scope="col">Version</th>
+            <th scope="col">Type</th>
+            <th scope="col">Exemple</th>
+            <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+    
+            <tr *ngFor='let l of logos'>
+            <th >{{l.id}}</th>
+            <td>{{l.dimensions}}</td>
+            <td>{{l.couleurs}}</td>
+            <td>{{l.support}}</td>
+            <td>{{l.version}}</td>
+            <td>{{l.typel}}</td>
+             <td>{{l.exemple}}</td>
+             <td>
+              <a href="#" class="view" title="View" data-toggle="tooltip" (click)='goToDisplay(l.id)'><i class="material-icons">&#xE417;</i></a>
+                 <a class="edit" title="Edit" data-toggle="tooltip" (click)='goToEdit(l.id)'><i class="material-icons">&#xE254;</i></a>
+                 <a class="delete" title="Delete" data-toggle="tooltip"(click)='deleteLogo(l.id)'><i class="material-icons">&#xE872;</i></a>
+    
+           </td>
+           </tr>  
+          </tbody>
+          </table>
+       
+       
+   
+  
+  
+  
+

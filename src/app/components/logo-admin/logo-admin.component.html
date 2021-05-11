@@ -1,0 +1,45 @@
+
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                <h3><b>Liste des logos</b></h3> 
+                </div>
+            </div>
+  
+            <table class="table table-bordered">
+        <table class="table">
+          <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Dimensions</th>
+            <th scope="col">Couleurs</th>
+            <th scope="col">Support</th>
+            <th scope="col">Version</th>
+            <th scope="col">Type</th>
+            <th scope="col">Exemple</th>
+           
+            </tr>
+          </thead>
+          <tbody>
+    
+            <tr *ngFor='let l of logos'>
+            <th >{{l.id}}</th>
+            <td>{{l.dimensions}}</td>
+            <td>{{l.couleurs}}</td>
+            <td>{{l.support}}</td>
+            <td>{{l.version}}</td>
+            <td>{{l.typel}}</td>
+             <td>{{l.exemple}}</td>
+            
+           </tr>  
+          </tbody>
+          </table>
+       
+       
+   
+  
+  
+  
+
+

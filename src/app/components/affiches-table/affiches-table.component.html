@@ -1,0 +1,46 @@
+
+    
+    <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+             
+          </div>
+
+          <table class="table table-bordered">
+      <table class="table">
+          <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Dimensions</th>
+            <th scope="col">Nombre d'images</th>
+            <th scope="col">Couleurs</th>
+            <th scope="col">Support</th>
+            <th scope="col">Exemple</th>
+            <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+    
+            <tr *ngFor='let a of Affiches'>
+            <th >{{a.id}}</th>
+            <td>{{a.dimensions}}</td>
+            <td>{{a.nbrimages}}</td>
+            <td>{{a.couleurs}}</td>
+            <td>{{a.support}}</td>
+            <td>{{a.exemple}</td>
+            <td>
+              <a href="#" class="view" title="View" data-toggle="tooltip" (click)='goToDisplay(a.id)'><i class="material-icons">&#xE417;</i></a>
+                 <a class="edit" title="Edit" data-toggle="tooltip" (click)='goToEdit(a.id)'><i class="material-icons">&#xE254;</i></a>
+                 <a class="delete" title="Delete" data-toggle="tooltip"(click)='deleteProjet(a.id)'><i class="material-icons">&#xE872;</i></a>
+    
+           </td>
+           </tr>  
+          </tbody>
+          </table>
+       
+       
+   
+  
+  
+  
+

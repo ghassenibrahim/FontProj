@@ -1,0 +1,52 @@
+<div class="wrapper">
+    <div class="inner">
+            <form #addAfficheForm='ngForm' (ngSubmit)='addAffiche()'>
+              
+              <div class="col-sm-8">
+                <div class="col-sm-4">
+                <h3><b>Ajouter une affiche</b></h3>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]='affiche.dimensions' [ngModelOptions]="{standalone: true}" placeholder="Dimensions">
+              </div>
+              </div>
+
+              <div class="col-sm-8">
+              <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]='affiche.nbrimages' [ngModelOptions]="{standalone: true}" placeholder="Nombre d'images">
+              </div>
+              </div>
+
+            <div class="col-sm-8">
+            <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]='affiche.couleurs' [ngModelOptions]="{standalone: true}" placeholder="Couleurs">
+            </div>
+            </div>
+
+
+                  <div class="col-sm-8">
+                    <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]='affiche.support' [ngModelOptions]="{standalone: true}" placeholder="Support">
+                    </div>
+                    </div>
+
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                      <input type="file" id="avatar" name="avatar" class="form-control" [(ngModel)]='affiche.exemple' [ngModelOptions]="{standalone: true}" accept="image/png, image/jpeg" placeholder="img">
+                    </div>
+                    </div>   
+
+               <button type="submit"  class="btn btn-secondary btn-lg"> 
+                 <span>Ajouter</span></button>     
+              </form>
+            </div>
+            <br><br>
+            </div>
+      
+  
+       
+      
+      
+      
+        
+      

@@ -1,0 +1,45 @@
+<div class="wrapper">
+  <div class="inner">
+<form class="row g-3"  #addProjetForm='ngForm' (ngSubmit)='addProjet()'>
+  <h3>Ajouter un projet</h3>
+   <div class="col-md-6">
+    <div class="form-group">
+    <input type="text" class="form-control" [(ngModel)]='projet.code'  placeholder="Code">
+    </div>
+   </div>
+    <div class="col-md-6">
+      <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]='projet.libelle' placeholder="Libelle">
+    </div>
+    </div>
+    <div class="col-12">
+      <div class="form-group">
+        <textarea  [(ngModel)]='projet.description' placeholder="Description"></textarea>
+    </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]='projet.datedebut' placeholder="Date_début">
+    </div>
+    </div>
+    
+
+    <div class="col-md-6">
+      <div class="form-group">
+      <input type="text" class="form-control"[(ngModel)]='projet.datefin' placeholder="Date_fin">
+    </div>
+    </div>
+
+       <div class="form-group col-md-6">
+        <select id="inputState" class="form-select" [(ngModel)]='projet.etat' [ngModelOptions]="{standalone: true}">
+          <option selected>Choose...</option>
+          <option>en cours</option>
+          <option>achevé</option>
+        </select>
+      </div>
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-primary">envoyer</button>
+    </div>
+  </form>
+  </div>
+  </div>

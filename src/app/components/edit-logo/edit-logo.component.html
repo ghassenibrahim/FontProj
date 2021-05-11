@@ -1,0 +1,78 @@
+<div class="wrapper">
+    <div class="inner">
+            <form #addLogoForm='ngForm' (ngSubmit)='editLogo()'>
+              <div class="col-sm-8">
+                <div class="col-sm-2">
+                <h3><b>Modifier Logo</b></h3>
+              </div>
+              </div>
+               <div class="col-sm-8">
+               <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]='logo.dimensions' [ngModelOptions]="{standalone: true}" placeholder="Dimensions">
+              </div>
+              </div>
+
+              <div class="col-sm-8">
+              <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]='logo.couleurs' [ngModelOptions]="{standalone: true}" placeholder="Couleurs">
+              </div>
+              </div>
+
+            
+              <div class="col-sm-8"> 
+                <div class="form-group">
+                <select id="inputState" class="form-select" [(ngModel)]='logo.support' [ngModelOptions]="{standalone: true}" placeholder="Support">
+                  <option [ngValue]="undefined"  disabled selected> Support</option>
+                  <option>papier</option>
+                  <option>mixte</option>
+                  <option>multimédia</option>
+                </select>
+                </div>
+                </div>
+
+              <div class="col-sm-8"> 
+                <div class="form-group">
+                <select id="inputState" class="form-select" [(ngModel)]='logo.version' [ngModelOptions]="{standalone: true}" placeholder="version">
+                  <option [ngValue]="undefined"  disabled selected> Version</option>
+                  <option>couleurs</option>
+                  <option>noir et blanc</option>
+                  <option>niveau de gris</option>
+                </select>
+                </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="form-group">
+                  <input type="file" id="avatar" name="avatar" class="form-control" [(ngModel)]='logo.exemple' [ngModelOptions]="{standalone: true}" accept="image/png, image/jpeg" placeholder="Exemple">
+                </div>
+                </div>
+                
+                <div class="col-sm-8"> 
+                  <div class="form-group">
+                    <select id="inputState" class="form-select" [(ngModel)]='logo.type' [ngModelOptions]="{standalone: true}" placeholder="Type">
+                      <option [ngValue]="undefined"  disabled selected> Type</option>
+                      <option>Monogrammes</option>
+                      <option> logotypes</option>
+                      <option> Symboles et pictogrammes</option>
+                      <option>Logos abstraits</option>
+                      <option> Mascottes</option>
+                      <option> Emblèmes</option>
+                      <option>Typography logo</option>
+                    </select>
+                    </div>
+                </div>
+
+               <button type="submit"  class="btn btn-secondary btn-lg"> 
+                 <span>Modifier</span></button>     
+               </form>
+               </div>
+              <br><br>
+             </div>
+      
+  
+       
+      
+      
+      
+        
+      
+

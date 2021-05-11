@@ -1,0 +1,36 @@
+
+    <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-8"><h4>Liste des types</h4></div>
+              </div>
+          </div>
+
+          <table class="table table-bordered">
+      <table class="table">
+        <thead>
+          <tr>
+          <th scope="col">#</th>
+          <th scope="col">Libelle</th>
+          <th scope="col">Description</th>
+          <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let t of types'>
+          <th >{{t.id}}</th>
+          <td>{{t.libelle}}</td>
+          <td>{{t.description}}</td>
+        <td>
+         <a class="edit" title="Edit" data-toggle="tooltip" (click)='goToEdit(t.id)'><i class="material-icons">&#xE254;</i></a>
+         <a class="delete" title="Delete" data-toggle="tooltip"(click)='deleteType(t.id)'><i class="material-icons">&#xE872;</i></a>
+       </td>
+       </tr>  
+        </tbody>
+        </table>
+     
+     
+ 
+
+
