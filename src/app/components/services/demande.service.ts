@@ -17,7 +17,7 @@ export class DemandeService {
     return this.httpClient.get(this.demandeUrl);
   }
 
-  getDemandeById(id){
+  getDemandeById(id): Observable<any>{
     return this.httpClient.get(`${this.demandeUrl}/${id}`);
   }
   getDemandeByUserId(id){

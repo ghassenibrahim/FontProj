@@ -1,3 +1,4 @@
+import { DemandeDetailsComponent } from './components/demande-details/demande-details.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
@@ -69,6 +70,8 @@ const routes: Routes = [
   {path: 'gestionprojets', component: GestionprojetsComponent},
   {path: 'gestiondemandes', component: GestiondemandesComponent},
   {path: 'gestiondemande', component: GestiondemandeComponent},
+  { path: 'details/:id', component: DemandeDetailsComponent},
+
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'types', component: TypesComponent},
@@ -107,7 +110,7 @@ const routes: Routes = [
   {path: 'modifLogo/:id', component: ModifLogoComponent },
   {path: 'modifAffiche/:id', component: ModifAfficheComponent },
   {path: 'editAffiche/:id', component: EditAfficheComponent }
-  
+
 ];
 
 @NgModule({

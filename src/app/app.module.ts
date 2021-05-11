@@ -1,3 +1,4 @@
+import { DemandeDetailsComponent } from './components/demande-details/demande-details.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -88,7 +89,7 @@ import { DemandeTableComponent } from './demande-table/demande-table.component';
     LoginComponent,
     SignupComponent,
     HeaderComponent,
-    ResultComponent, 
+    ResultComponent,
     AddTypeComponent,
     TypesTableComponent,
     TypesComponent,
@@ -156,21 +157,22 @@ import { DemandeTableComponent } from './demande-table/demande-table.component';
     GestionAfficheAdminComponent,
     ModifTypeComponent,
     AddClientComponent,
-    DemandeTableComponent
+    DemandeTableComponent,
+    DemandeDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule, 
+    HttpClientModule,
     AppRoutingModule,
     ProgressBarModule
-    
+
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true}  
+    {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true}
   ],
-  
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

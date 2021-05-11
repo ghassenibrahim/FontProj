@@ -1,0 +1,37 @@
+<div id="wrapper">
+  <app-menu></app-menu>
+
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      <app-navbar></app-navbar>
+      <br>
+      <div class="container-fluid">
+        <div class="row">
+
+
+          <div class="card">
+            <h5 class="card-header">Detail</h5>
+            <div class="card-body" *ngIf="user">
+
+              <h5 class="card-header"> {{user.nom}} {{user.prenom}} </h5>
+              <h5 class="card-header"> {{user.email}} </h5>
+            </div>
+            <div class="card-body" *ngIf="demande">
+              <p class="card-text">id :{{demande.id}}</p>
+              <p class="card-text">libelle :{{demande.libelle}}</p>
+              <p class="card-text">sujet :{{demande.sujet}}</p>
+              <p class="card-text">date :{{demande.date}}</p>
+              <p class="card-text">desciption :{{demande.description}}</p>
+              <p class="card-text">type :{{demande.type}}</p>
+
+              <a href="#" class="btn btn-primary">Send email of confirmation </a>
+              <a href="#" class="btn btn-danger">Send email of Rejection</a>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

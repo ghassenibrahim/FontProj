@@ -19,12 +19,15 @@ export class DemandesTableComponent implements OnInit {
      this.getDemandesFromService();
   }
   getDemandesFromService() {
-    this.demandeService.getAllDemandeSent(this.id).subscribe((data)=>{
+    this.demandeService.getAllDemandes().subscribe((data)=>{
       this.demandes=data;
       console.log(this.demandes)
     }) }
     goToEdit(x){
       this.router.navigate([`editDemande/${x}`])
+    }
+    DemandeDetails(id:number){
+      this.router.navigate(['details', id]);
     }
 
 }

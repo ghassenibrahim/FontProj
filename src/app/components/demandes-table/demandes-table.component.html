@@ -3,8 +3,8 @@
       <div class="table-wrapper">
           <div class="table-title">
               <div class="row">
-                  
-                  
+
+
               </div>
           </div>
 
@@ -19,7 +19,7 @@
         <th scope="col">Description</th>
         <th scope="col">Type projet</th>
         <th scope="col">Actions</th>
-  
+
       </tr>
     </thead>
     <tbody>
@@ -30,11 +30,13 @@
         <td>{{d.date}}</td>
         <td>{{d.description}}</td>
         <td>{{d.type}}</td>
-        <td>
-       <button class="btn btn-primary">Accepter</button>
-       <button class="btn btn-danger">Refuser</button>
-       </td>
+
+          <td>
+            <a  (click)="DemandeDetails(d.id)" class="view" title="View" data-toggle="tooltip" ><i class="material-icons">&#xE417;</i></a>
+            <a class="edit" title="Edit" data-toggle="tooltip" ><i class="material-icons">&#xE254;</i></a>
+            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+</td>
+
       </tr>
     </tbody>
   </table>
- 

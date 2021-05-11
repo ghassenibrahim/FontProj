@@ -1,12 +1,13 @@
+import { User } from './user';
 export class Demande{
-    constructor(
-        
-        id:number,
-        libelle:string,
-        sujet:string,
-        date:string,
-        description:string,
+
+
+        id:number;
+        libelle:string;
+        sujet:string;
+        date:string;
+        description:string;
         type:string
-        
-    ){}
-}
+        user:User
+
+ }
