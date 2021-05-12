@@ -1,3 +1,4 @@
+import { TemplateEmail } from './../../Models/EmailTemplate';
 import { User } from './../../Models/user';
 import { DemandeService } from './../services/demande.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -13,6 +14,8 @@ export class DemandeDetailsComponent implements OnInit {
   id: number;
   demande: Demande;
   user:User;
+  email:TemplateEmail;
+  emailrejet:TemplateEmail;
 
   constructor(private route: ActivatedRoute,private router: Router,
     private demandeservice:DemandeService) { }
@@ -30,7 +33,40 @@ export class DemandeDetailsComponent implements OnInit {
 
     }, error => console.log(error));
 }
+acceptdemande(){
+this.email=new TemplateEmail();
+this.email.sendTo=this.demande.user.email;
+this.email.subject="accept"
+this.email.body=" votre demande a été accepte"
+this.demandeservice.reponsedemande(this.email).subscribe(
+  data=>{this.router.navigate(["/gestiondemandes"])},
+  err=>{
+    this.router.navigate(["/gestiondemandes"]),
+    console.log(err)
 
+  }
+
+)
+
+}
+
+rejectdemande(){
+  this.emailrejet=new TemplateEmail();
+  this.emailrejet.sendTo="ghassenibrahim01@gmail.com"
+  this.emailrejet.subject="reject"
+  this.emailrejet.body=" votre demande a été refusé"
+  this.demandeservice.reponsedemande(this.emailrejet).subscribe(
+    data=>{
+      this.router.navigate(["/gestiondemandes"])},
+    err=>{
+      this.router.navigate(["/gestiondemandes"]),
+      console.log(err)
+
+    }
+
+  )
+
+  }
   }
 
 

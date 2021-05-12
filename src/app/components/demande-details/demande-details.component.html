@@ -24,8 +24,8 @@
               <p class="card-text">desciption :{{demande.description}}</p>
               <p class="card-text">type :{{demande.type}}</p>
 
-              <a href="#" class="btn btn-primary">Send email of confirmation </a>
-              <a href="#" class="btn btn-danger">Send email of Rejection</a>
+              <a (click)=acceptdemande() class="btn btn-primary">Send email of confirmation </a>
+              <a (click)=rejectdemande() class="btn btn-danger">Send email of Rejection</a>
 
             </div>
           </div>
