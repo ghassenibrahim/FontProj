@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-
+  user:string = 'http://localhost:8080/api/users/id/';
   userUrl:string = 'http://localhost:8080/api/users';
   constructor(private httpClient: HttpClient) { }
 
@@ -19,6 +19,9 @@ export class UserService {
     return this.httpClient.post('/api/login', user);
   }
   getuserbyemail(email:string){
-    return this.httpClient.get(`http://localhost:8080/api/users/${email}`);
+    return this.httpClient.get(`http://localhost:8080/api/users/email/${email}`);
+  }
+  getuserbyid(id:number){
+    return this.httpClient.get(`http://localhost:8080/api/users/id/${id}`);
   }
 }

@@ -1,3 +1,6 @@
+import { User } from './../../Models/user';
+import { UserService } from './../services/user.service';
+import { Demande } from 'src/app/Models/demande';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,32 +11,38 @@ import { DemandeService } from '../services/demande.service';
   styleUrls: ['./add-demande.component.css']
 })
 export class AddDemandeComponent implements OnInit {
-  demande:any={};
+  id: number;
+  user:any;
+  demande:Demande=new Demande ();
   addDemandeForm:FormGroup;
-types= ['conception logo','vidéo',];
+  types : any []= ["conception logo","vidéo"];
 constructor( private formBuilder:FormBuilder,
-  private demandeService:DemandeService,private router:Router  ) { }
+  private demandeService:DemandeService,private userService:UserService,private router:Router  ) { }
   ngOnInit() {
+    this.id=parseInt(sessionStorage.getItem("id"))
 
-    this.addDemandeForm=this.formBuilder.group(
-      {
-       libelle:[''],
-       sujet:[''],
-       date:[''],
-       description:[''],
-       type:['']
-      
-      }
-    ) }
+
+
+    this.getuser()
+    }
+    getuser(){
+      this.userService.getuserbyid(this.id).subscribe(
+        data => {
+          console.log("duseraaaaaaaaaaaaaaaaaaaa",data)
+          this.user=data;
+        }
+      )
+    }
     addDemande(){
+     this.demande.user=this.user;
       this.demandeService.addDemande(this.demande).subscribe(
         ()=>{
-          console.log(this.demande.libelle)
+
        localStorage.setItem("libelle",this.demande.libelle);
           this.router.navigate(['gestiondemandes']);
         }
       )
-    }     
+    }
 
   }
 

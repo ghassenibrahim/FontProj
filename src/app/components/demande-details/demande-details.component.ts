@@ -32,7 +32,9 @@ export class DemandeDetailsComponent implements OnInit {
       console.log("user_detail", this.user)
 
     }, error => console.log(error));
+
 }
+
 acceptdemande(){
 this.email=new TemplateEmail();
 this.email.sendTo=this.demande.user.email;
@@ -52,7 +54,7 @@ this.demandeservice.reponsedemande(this.email).subscribe(
 
 rejectdemande(){
   this.emailrejet=new TemplateEmail();
-  this.emailrejet.sendTo="ghassenibrahim01@gmail.com"
+  this.emailrejet.sendTo=this.demande.user.email
   this.emailrejet.subject="reject"
   this.emailrejet.body=" votre demande a été refusé"
   this.demandeservice.reponsedemande(this.emailrejet).subscribe(

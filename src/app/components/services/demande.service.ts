@@ -11,8 +11,8 @@ export class DemandeService {
 
   demandeUrl:string='http://localhost:8080/api/demandes';
   demandeurl:string='http://localhost:8080/api/demandes/demande';
-  emailform:string='http://localhost:8080/v1/notification/textemail'
-
+  emailform:string='http://localhost:8080/v1/notification/textemail';
+  demandeUr:string='http://localhost:8080/api/demandes/addDemande'
   constructor(private httpClient:HttpClient) { }
 
   getAllDemandes(){
@@ -34,7 +34,7 @@ reponsedemande(templateemail:TemplateEmail){
 
 
 addDemande(demande:any){
-  return this.httpClient.post(this.demandeUrl,demande);
+  return this.httpClient.post(this.demandeUr,demande);
 }
   updateDemande(demande:any){
     return this.httpClient.put(`${this.demandeUrl}/${demande.id}`,demande);
